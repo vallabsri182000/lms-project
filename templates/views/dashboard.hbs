@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>Leanrzilla-DashBoard</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+<link rel="icon" href="images/icon.jpg">
+<style>
+body {font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box}
+
+/* Full-width input fields */
+input[type=text], input[type=password], input[type=email],input[type=number],input[type=file] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+
+input[type=text]:focus, input[type=password],input[type=email],input[type=number],input[type=file],input[type=submit]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+
+/* Set a style for all buttons */
+
+button {
+  background-color: #04AA6D;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+button:hover {
+  opacity:1;
+}
+
+button:hover {
+  opacity:1;
+}
+
+
+/* Float cancel and signup buttons and add an equal width */
+.updatebtn {
+    
+  width: 50%;
+}
+
+/* Add padding to container elements */
+.container {
+    
+  padding: 16px;
+}
+
+/* Clear floats */
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+/* Change styles for cancel button and signup button on extra small screens */
+@media screen and (max-width: 300px) {
+   .updatebtn {
+     width: 100%;
+  }
+}
+</style>
+<body >
+
+   
+{{# each contents }}
+<form  action="/dashboard" method="POST" style="border:1px solid #ccc">
+    <div class="container">
+    <h1 class=" w3-container w3-blue w3-center" style="width: 100%; margin-bottom: none;">Dashboard</h1>
+    <hr>
+
+    <label for="fname"><b>First Name</b> </label>
+    
+   <input type="text" placeholder="{{this.fname}} "name="dfname" > 
+
+        
+    <label for="lname"><b>Last Name</b></label>
+    <input type="text" placeholder="{{this.lname}}" name="dlname"> 
+
+    <label for="email"><b>Email</b></label>
+    <input type="email" placeholder="{{this.email}}" name="demail"> 
+    <label for="phone"><b>Contact Number</b></label>
+    <input type="number" placeholder="{{this.cnum}}" name="dcnum"> 
+
+    <label for="psw"><b>Password</b></label>
+    <input type="password" placeholder="{{this.psw}}" name="dpsw"> 
+
+    <label for="psw-repeat"><b>Confirm Password</b></label>
+    <input type="password" placeholder=" {{this.cpsw}}" name="dcpsw">
+    <label for="pic"><b>Profile Picture</b></label>
+    <input type="file" id="myFile" name="file" ><br>
+   
+    
+    <label>
+      <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
+    </label><br>
+    <a href="/homepage" class=" w3-white" style="text-decoration: none;">Back To Homepage</a><br>
+    </div>
+    <div style="display:flex; justify-content:center;">
+      <button type="submit" class="updatebtn"style="background-color: dodgerblue;">Update</button>
+       <button class="logoutbtn"><a href="/index" style="text-decoration: none;color: 0;">LogOut</a></button>
+    
+  </div>
+</form>
+{{/each}}
+</body>
+</html>
+
+<!--
+<!DOCTYPE html>
+<html lang="en">
+<title>Leanrzilla-DashBoard</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+<link rel="icon" href="images/icon.jpg">
+<style>
+body {font-family: Arial, Helvetica, sans-serif; }
+* {box-sizing: border-box}
+
+
+
+
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+
+/* Set a style for all buttons */
+
+button {
+  font-weight: bold;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px ;
+  border: none;
+  cursor: pointer;
+  width: 15%;
+  opacity: 0.9;
+}
+
+button:hover {
+  opacity:1;
+}
+
+</style>
+<body  onload="checkEdits()">
+
+
+    <div class="container">
+    <h1 class=" w3-container w3-blue w3-center" style="width: 100%; margin-bottom: none;">Dashboard</h1>
+    <hr>
+    
+    <div class="w3-container">
+
+      <h2>Your Details</h2>
+      <div class="w3-container w3-responsive ">
+        <div class="w3-row">
+          <div class="w3-col w3-blue  w3-container" style="font-size:15px; font-weight:bold;width:30%"><p>First Name:</p></div>
+          <div class="w3-col w3-white w3-container" style="width:30%;border:1px solid black;"  id="edit" contenteditable="true"><p>{{this.fname}}</p></div>
+        </div>
+        <div class="w3-row">
+          <div class="w3-col w3-blue w3-container" style="width:30%;font-size:15px; font-weight:bold;margin-top: 1.5%;"><p>Last Name:</p></div>
+          <div class="w3-col w3-white w3-container" style="width:30%; margin-top: 1.5%;border:1px solid black;" id="edit" contenteditable="true"><p>{{this.lname}}</p></div>
+          </div>
+          <div class="w3-row">
+            <div class="w3-col w3-blue w3-container" style="width:30%;font-size:15px; font-weight:bold;margin-top: 1.5%;"><p>Email:</p></div>
+            <div class="w3-col w3-white w3-container" style="width:30%; margin-top: 1.5%;border:1px solid black;" id="edit" contenteditable="true"><p>{{this.email}}</p></div>
+            </div>
+            <div class="w3-row">
+              <div class="w3-col w3-blue w3-container" style="width:30%; font-size:15px; font-weight:bold;margin-top: 1.5%;"><p>Contact Number:</p></div>
+              <div class="w3-col w3-white w3-container" style="width:30%; margin-top: 1.5%;border:1px solid black;" id="edit" contenteditable="true"><p>{{this.cnum}}</p></div>
+              </div>
+              <div class="w3-row">
+                <div class="w3-col w3-blue w3-container" style="width:30%;font-size:15px; font-weight:bold;margin-top: 1.5%;"><p>Password:</p></div>
+                <div class="w3-col w3-white w3-container" style="width:30%; margin-top: 1.5%;border:1px solid black;" id="edit" contenteditable="true"><p>{{this.psw}}</p></div>
+                </div>
+                <div class="w3-row">
+                  <div class="w3-col w3-blue w3-container" style="width:30%;font-size:15px; font-weight:bold;margin-top: 1.5%;"><p>Confirm Pasword:</p></div>
+                  <div class="w3-col w3-white w3-container" style="width:30%; margin-top: 1.5%;border:1px solid black;" id="edit" contenteditable="true"><p>{{this.cpsw}}</p></div>
+                  </div>
+                  <div class="w3-row">
+                    <div class="w3-col w3-blue w3-container" style="width:30%;font-size:15px; font-weight:bold;margin-top: 1.5%;"><p>Profile Picture:</p></div>
+                    <div class="w3-col w3-white w3-container" style="width:30%; margin-top: 1.5%;border:1px solid black;" id="edit" contenteditable="true"><p></p></div>
+                    </div>
+      </div>
+  
+      <label>
+      <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
+    </label><br>
+    <a href="/homepage" class=" w3-white" style="text-decoration: none;">Back To Homepage</a><br>
+    </div>
+           <div style="display:flex; justify-content:left;">
+            <button type="submit" class="updatebtn"style="background-color:dodgerblue;" method:"POST";>Update</button>
+          
+ 
+  
+</body>
+</html> -->
+

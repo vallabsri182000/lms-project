@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<title> Learnzilla-Login</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="icon" href="images/icon.jpg">
+<style>
+body {font-family: Arial, Helvetica, sans-serif;}
+form {border: 3px solid #f1f1f1; width: 100%;}
+input[type=email], input[type=password] {
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: none;
+  box-sizing: border-box;
+}
+
+button {
+
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+
+.imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+}
+
+img.avatar {
+  width: 40%;
+  border-radius: 50%;
+}
+
+.container {
+  padding: 16px;
+}
+
+span.psw {
+  float: center;
+  padding-top: 16px;
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+  span.psw {
+     display: block;
+     float: none;
+  }
+  input[type=email], input[type=password] {
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: none;
+  box-sizing: border-box;
+} 
+}
+</style>
+</head>
+<body>
+<div class="container">
+   
+<h2 class=" w3-container w3-blue w3-center" style="width: 100%;">Login Form</h2>
+
+<form action="/login" method="POST">  
+  <div class="w3-container w3-center" style="width: 100%;">
+    <label for="uname" class="w3-text-blue"><b>Email</b></label>
+    <input type="email" placeholder="Enter Email" name="loemail" required><br>
+
+    <label for="psw" class="w3-text-blue"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="passw" required><br>
+        
+    <button  type="submit" class="w3-blue w3-center " style="width: 20%;" >Login</button><br>
+    <label for="signup" class="w3-text-blue">New User Create account</label><br>
+    <button type="submit" class="w3-blue w3-center"style="width:20%;"><a href="/signup" style="text-decoration: none;">Sign Up</a></button><br>
+    <label>
+      <input type="checkbox" checked="checked" name="remember"> Remember me
+    </label><br>
+
+    
+    <span class="psw"><a href="#" style="text-decoration: none;">Forgot password?</a></span><br>
+    <a href="/index" class="  w3-white" style="text-decoration: none;">Back To Mainpage</a>
+</div>
+</form>
+</div>
+</body>
+</html>
